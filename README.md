@@ -114,7 +114,7 @@ _.each(['a','b'], function(item) {
 
 ### Return earlier on the function to make code readable
 
-`return`-ing earlier allows a better coding style with clear and concise logical sequence. 
+`return`-ing earlier allows a better coding style with clear and concise logical sequence.
 
 ```js
 function funcA() {
