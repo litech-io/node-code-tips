@@ -1,9 +1,9 @@
 Node.js Tips
 ======
 
-A small _guide_ to writing coherent and concise Javascript that keeps everyone sane!
+Some tips to writing _coherent_ and _concise_ Javascript that keeps everyone sane!
 
-1. Always use _either_ synchronous or asynchronous in functions. Not both.
+> Always use _either_ synchronous or asynchronous in functions. Not both.
 
 ```js
 // Bad
@@ -24,7 +24,7 @@ function async(a, b, cb) {
 }
 ```
 
-2. When using callback, first argument is _always_ an error object
+> When using callback, first argument is _always_ an error object
 
 ```js
 function test(cb) {
@@ -33,7 +33,7 @@ function test(cb) {
 }
 ```
 
-3. Bad usage of `async` library
+> Bad usage of `async` library
 
 ```js
 async.map(arr, function(item, callback) {
