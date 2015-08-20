@@ -1,13 +1,24 @@
 Node.js Tips
 ======
 
-Some tips to writing _coherent_ and _concise_ Javascript that keeps everyone sane!
+Writing code is easy. Writing clear, concise and coherent code is not, especially in Javascript. Here are some tips that can help developers to stay sane.
+
+## Linting
+
+When collaborating with other members (organization/open source/etc.), always use some form of linting before committing code. Whether it's eslint, jshint etc, doesn't matter. Just use one.
+
+## Style
+
+- 80 characters length
+- tabspace: 2 (With js's callback natures, you don't want to start scrolling horizontally)
+
+## Case Studies
 
 ### Always use _either_ synchronous or asynchronous in functions. Not both.
 
 ```js
-// Bad
-function wtf(a, b, cb) {
+function terrible(a, b, cb) {
+	// Don't do this!
 	if (a === 10) {
 		cb(null, a + b);
 	} else {
@@ -15,7 +26,6 @@ function wtf(a, b, cb) {
 	}
 }
 
-// Good
 function good(a, b, cb) {
 	if (a === 10) {
 		process.nextTick(function() {
@@ -79,6 +89,18 @@ async.map(arr, function(item, callback) {
 	});
 }, function() {
 	console.log('happy now')
+});
+```
+
+### Use `lodash` for object manipulations
+
+`lodash`(https://lodash.com/) is a utility library that can be used for `object` and `array`. Do not use the corresponding `async` (map/every/etc.), as it's meant for something totally different.
+
+```js
+var _ = require('lodash');
+
+_.each(['a','b'], function(item) {
+	console.log(item);
 });
 ```
 
