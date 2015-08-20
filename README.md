@@ -1,5 +1,7 @@
-Javascript/Node Guide
+Node.js Tips
 ======
+
+A small _guide_ to writing coherent and concise Javascript that keeps everyone sane!
 
 1. Always use _either_ synchronous or asynchronous in functions. Not both.
 
