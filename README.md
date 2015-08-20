@@ -8,18 +8,46 @@ Some tips to writing _coherent_ and _concise_ Javascript that keeps everyone san
 ```js
 // Bad
 function wtf(a, b, cb) {
-	cb(null, a + b);
+	if (a === 10) {
+		cb(null, a + b);
+	} else {
+		someAsyncFunc(a, b, cb);
+	}
 }
 
 // Good
+function good(a, b, cb) {
+	if (a === 10) {
+		process.nextTick(function() {
+			cb(null, a + b);
+		});
+	} else {
+		someAsyncFunc(a, b, cb);
+	}
+}
+```
+
+### Consistency in functions returns
+
+Synchronous functions should always use `return` and avoid `callbacks` to be called upon completion.
+
+```js
 function sync(a, b) {
-  return a + b;
+	return a + b;
+}
+```
+
+Asynchronous should rely on either `Promise` or `callbacks`.
+
+```js
+function async(a, b, callback) {
+	process.nextTick(function() {
+		callback(null, a, b);
+	});
 }
 
-function async(a, b, cb) {
-  process.nextTick(function() {
-  	cb(null, a + b);
-  });
+function promisified(a, b) {
+	return Promise.resolve(a + b);
 }
 ```
 
@@ -27,8 +55,7 @@ function async(a, b, cb) {
 
 ```js
 function test(cb) {
-	cb(err, args); // good
-	cb(args);  // bad
+	cb(err, args);
 }
 ```
 
@@ -55,7 +82,7 @@ async.map(arr, function(item, callback) {
 });
 ```
 
-### Use `return` within `if` when the `else` is too long
+### Return earlier on the function to make code readable
 
 ```js
 function funcA() {
