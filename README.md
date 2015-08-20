@@ -54,7 +54,7 @@ function sync(a, b) {
 }
 ```
 
-Asynchronous should rely on either `Promise` or `callbacks`.
+Asynchronous should rely on either `Promise` or `callback`.
 
 ```js
 function async(a, b, callback) {
@@ -101,7 +101,7 @@ async.map(arr, function(item, callback) {
 
 ### Use `lodash` for object manipulations
 
-`lodash`(https://lodash.com/) is a utility library that can be used for `object` and `array`. Do not use the corresponding `async` (map/every/etc.), as it's meant for something totally different.
+[`lodash`](https://lodash.com/) is a utility library that can be used for `object` and `array`. Do not use the corresponding [`async`](https://github.com/caolan/async) (map/every/etc.), as it's meant for something totally different.
 
 ```js
 var _ = require('lodash');
@@ -112,6 +112,8 @@ _.each(['a','b'], function(item) {
 ```
 
 ### Return earlier on the function to make code readable
+
+`return`-ing earlier allows a better coding style with clear and concise logical sequence. 
 
 ```js
 function funcA() {
