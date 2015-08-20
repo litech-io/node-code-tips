@@ -12,6 +12,13 @@ When collaborating with other members (organization/open source/etc.), always us
 - 80 characters length
 - tabspace: 2 (With js's callback natures, you don't want to start scrolling horizontally)
 
+## Structure
+
+Always have a root file (index.js/app.js/server.js). It gives clear guidance to readers as to where to begin.
+
+`tests`: always have tests for your code, and put them within the tests directory
+`lib`: holds all library (middlewares, and helpers)
+
 ## Case Studies
 
 ### Always use _either_ synchronous or asynchronous in functions. Not both.
