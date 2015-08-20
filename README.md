@@ -17,6 +17,7 @@ When collaborating with other members (organization/open source/etc.), always us
 Always have a root file (index.js/app.js/server.js). It gives clear guidance to readers as to where to begin.
 
 `tests`: always have tests for your code, and put them within the tests directory
+
 `lib`: holds all library (middlewares, and helpers)
 
 ## Case Studies
