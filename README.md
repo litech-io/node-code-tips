@@ -125,3 +125,7 @@ function funcA() {
 	// a lot of code....
 }
 ```
+
+## Further reading
+
+I would highly suggest reading the [style guide](https://github.com/felixge/node-style-guide) by [@felixge](https://github.com/felixge).
