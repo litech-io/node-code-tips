@@ -126,6 +126,25 @@ function funcA() {
 }
 ```
 
+### Be explict when using callbacks
+
+Always be explicit in function calls, so that everyone would be clear as to
+which variables are to be passed around.
+
+```js
+// Avoid this!
+function (fn) {
+	fs.readFile('test.txt',fn);
+}
+
+// This would be better
+function (fn) {
+	fs.readFile('test.txt', function(err, data) {
+		fn(err, data);
+	});
+}
+```
+
 ## Further reading
 
 I would highly suggest reading the [style guide](https://github.com/felixge/node-style-guide) by [@felixge](https://github.com/felixge).
