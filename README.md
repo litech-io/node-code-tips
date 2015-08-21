@@ -1,11 +1,14 @@
 Node.js Tips
 ======
 
-Writing code is easy. Writing clear, concise and coherent code is not, especially in Javascript. Here are some tips that can help developers to stay sane.
+Writing code is easy. Writing clear, concise and coherent code is not,
+especially in Javascript. Here are some tips that can help developers to stay sane.
 
 ## Linting
 
-When collaborating with other members (organization/open source/etc.), always use some form of linting before committing code. Whether it's eslint, jshint etc, doesn't matter. Just use one.
+When collaborating with other members (organization/open source/etc.),
+always use some form of linting before committing code.
+Whether it's eslint, jshint etc, doesn't matter. Just use one.
 
 ## Style
 
@@ -14,7 +17,8 @@ When collaborating with other members (organization/open source/etc.), always us
 
 ## Structure
 
-Always have a root file (index.js/app.js/server.js). It gives clear guidance to readers as to where to begin.
+Always have a root file (index.js/app.js/server.js). It gives clear guidance to
+readers as to where to begin.
 
 `tests`: always have tests for your code, and put them within the tests directory
 
@@ -47,7 +51,8 @@ function good(a, b, cb) {
 
 ### Consistency in functions returns
 
-Synchronous functions should always use `return` and avoid `callbacks` to be called upon completion.
+Synchronous functions should always use `return` and avoid `callbacks` to be
+called upon completion.
 
 ```js
 function sync(a, b) {
@@ -79,7 +84,8 @@ function test(cb) {
 
 ### Bad usage of `async` library
 
-`async` library is only meant to use with functions that are truly asynchronous. Do not use it with synchronous ones!
+`async` library is only meant to use with functions that are truly asynchronous.
+Do not use it with synchronous ones!
 (Reference: [#75](https://github.com/caolan/async/issues/75))
 
 ```js
@@ -102,7 +108,9 @@ async.map(arr, function(item, callback) {
 
 ### Use `lodash` for object manipulations
 
-[`lodash`](https://lodash.com/) is a utility library that can be used for `object` and `array`. Do not use the corresponding [`async`](https://github.com/caolan/async) (map/every/etc.), as it's meant for something totally different.
+[`lodash`](https://lodash.com/) is a utility library that can be used for
+`object` and `array`. Do not use the corresponding [`async`](https://github.com/caolan/async)
+(map/every/etc.), as it's meant for something totally different.
 
 ```js
 var _ = require('lodash');
@@ -151,4 +159,5 @@ I would highly suggest reading the [style guide](https://github.com/felixge/node
 
 ## Contributions
 
-Should you feel that there are other pet peeves you'd like to share, feel free to fork it, commit and create a PR.
+Should you feel that there are other pet peeves you'd like to share,
+feel free to fork it, commit and create a PR.
