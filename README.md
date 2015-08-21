@@ -24,6 +24,38 @@ readers as to where to begin.
 
 `lib`: holds all library (middlewares, and helpers)
 
+## The Language
+
+Javascript is an extremely "annoying" (yes, in quotes) language. It is a very
+small language that can be picked up quickly. However to master it, there are
+a lot to learn.
+
+### Interview Question:
+
+Event Loop:
+
+```js
+for (var i = 0; i < 10; i++) {
+	setImmediate(function() {
+		console.log(i);
+	});
+}
+```
+
+Function Binding:
+
+```js
+var test = {};
+
+function a() {
+	console.log(this);
+}
+
+a.bind(test);
+```
+
+`apply` vs `call`
+
 ## Case Studies
 
 ### Always use _either_ synchronous or asynchronous in functions. Not both.
@@ -134,7 +166,23 @@ function funcA() {
 }
 ```
 
-### Be explict when using callbacks
+### Add a `return` even for asynchronous functions
+
+This allows clear signals that the function has been terminated, and avoid
+invoking the callback function multiple times. It even reduces the
+use of `else` in many case.
+
+```js
+function async(fn) {
+	return http.get('http://example.com', function() {
+		fn();
+	});
+
+	console.log('this will not be printed');
+}
+```
+
+### Be explicit when using callbacks
 
 Always be explicit in function calls, so that everyone would be clear as to
 which variables are to be passed around.
