@@ -133,12 +133,12 @@ which variables are to be passed around.
 
 ```js
 // Avoid this!
-function (fn) {
-	fs.readFile('test.txt',fn);
+function(fn) {
+	fs.readFile('test.txt', fn);
 }
 
 // This would be better
-function (fn) {
+function(fn) {
 	fs.readFile('test.txt', function(err, data) {
 		fn(err, data);
 	});
@@ -148,3 +148,7 @@ function (fn) {
 ## Further reading
 
 I would highly suggest reading the [style guide](https://github.com/felixge/node-style-guide) by [@felixge](https://github.com/felixge).
+
+## Contributions
+
+Should you feel that there are other pet peeves you'd like to share, feel free to fork it, commit and create a PR.
