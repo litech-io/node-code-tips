@@ -201,6 +201,36 @@ function(fn) {
 }
 ```
 
+### Understanding variables and functions
+
+```js
+var a = function() {};
+
+// vs
+
+function a() {
+}
+```
+
+The former is assigning an anonymous function to a variable `a`, while latter is defining a function named a. The biggest difference between the two relies on `variable hoisting`
+
+### Naming functions and closures
+
+Whilst this might seems unnecessary, it definitely helps when you want to see the better stack trace. 
+
+```js
+var a = function a() {
+	throw new Error('e');
+};
+
+try {
+	a();
+} catch(e) {
+	console.log(e);
+}
+
+```
+
 ## Further reading
 
 I would highly suggest reading the [style guide](https://github.com/felixge/node-style-guide) by [@felixge](https://github.com/felixge).
