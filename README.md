@@ -216,7 +216,7 @@ The former is assigning an anonymous function to a variable `a`, while latter is
 
 ### Naming functions and closures
 
-Whilst this might seems unnecessary, it definitely helps when you want to see the better stack trace. 
+Whilst this might seems unnecessary, it definitely helps when you want to see the better stack trace.
 
 ```js
 var a = function a() {
@@ -229,6 +229,26 @@ try {
 	console.log(e);
 }
 
+```
+
+### Avoiding exporting functions
+
+This doesn't mean that it's _wrong_ to export a function. It really just means that a function isn't ideal to be exported, if it doesn't do anything computational.
+
+node.js, by default, caches the output of the `module.exports` but when it exports a function, that function is being cached, not the output.
+
+```js
+module.exports = function() {
+	return {
+		a: 'b'
+	};
+};
+
+// vs.
+
+module.exports = {
+	a: 'b'
+};
 ```
 
 ## Further reading
