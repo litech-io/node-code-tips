@@ -251,6 +251,25 @@ module.exports = {
 };
 ```
 
+### Using Promises in a smart way.
+
+When you deal with promises, you just need to return a promise.
+
+```js
+var Promise = require('bluebird');
+
+function test() {
+	return Promise.resolve();
+}
+
+// The return of this function will be another promise too. You do not need to wrap a() within a `new promise`
+function a() {
+	return test().then(function() {
+		return Promise.resolve();
+	});
+}
+```
+
 ## Further reading
 
 I would highly suggest reading the [style guide](https://github.com/felixge/node-style-guide) by [@felixge](https://github.com/felixge).
