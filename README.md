@@ -273,7 +273,15 @@ function a() {
 ## Testing
 
 Writing test should always be done. It will greatly help you in the long run.
-When writing unit test, I usually use BDD (Behavioural) with mocha, and have istanbul.
+When writing unit test, I usually use BDD (Behavioural) with mocha, and have istanbul for code coverage.
+
+```js
+describe('as a user', function() {
+  it('should be able to retrieve expected data', function() {
+    // can pass an optional `done` for asynchronous tests
+  });
+});
+```
 
 ## Further reading
 
