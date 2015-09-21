@@ -270,6 +270,11 @@ function a() {
 }
 ```
 
+## Testing
+
+Writing test should always be done. It will greatly help you in the long run.
+When writing unit test, I usually use BDD (Behavioural) with mocha, and have istanbul.
+
 ## Further reading
 
 I would highly suggest reading the [style guide](https://github.com/felixge/node-style-guide) by [@felixge](https://github.com/felixge).
