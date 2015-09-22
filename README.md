@@ -4,6 +4,10 @@ Node.js Tips
 Writing code is easy. Writing clear, concise and coherent code is not,
 especially in Javascript. Here are some tips that can help developers to stay sane.
 
+Writing legible and tidy code help towards having readable code that can greatly improve
+how you refactor code later on. Avoid having too much dependencies within each of your modules
+(think about testing when doing this)
+
 ## Linting
 
 When collaborating with other members (organization/open source/etc.),
@@ -282,6 +286,9 @@ describe('as a user', function() {
   });
 });
 ```
+
+Think about testing when you code. It can help towards having a good coverage as well as
+concise functions.
 
 ## Further reading
 
