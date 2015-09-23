@@ -281,14 +281,24 @@ When writing unit test, I usually use BDD (Behavioural) with mocha, and have ist
 
 ```js
 describe('as a user', function() {
-  it('should be able to retrieve expected data', function() {
-    // can pass an optional `done` for asynchronous tests
-  });
+	it('should be able to retrieve expected data', function() {
+		// can pass an optional `done` for asynchronous tests
+	});
 });
 ```
 
 Think about testing when you code. It can help towards having a good coverage as well as
 concise functions.
+
+One suggestion would be to write test in format of scenarios.
+
+```js
+describe('when user hits endpoint', function() {
+	it('should see the login page', function() {
+		assert.ok();
+	});
+});
+```
 
 ## Further reading
 
