@@ -87,7 +87,7 @@ function good(a, b, cb) {
 
 ### Consistency in functions returns
 
-Synchronous functions should always use `return` and avoid `callbacks` to be
+Synchronous functions should always use `return` and avoid `callback` to be
 called upon completion.
 
 ```js
