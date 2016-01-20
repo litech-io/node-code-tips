@@ -142,6 +142,29 @@ async.map(arr, function(item, callback) {
 });
 ```
 
+### Nested async calls
+
+Avoid using nested asynchronous calls in your functions; they would only make your functions more complicated
+and less attractive/readable.
+
+```js
+function test(callback) {
+  async.series([], function(err) {
+    if (err) {
+      return callback(err);
+    }
+
+    // terrible!
+    async.waterfall([], function() {
+
+    });
+
+  });
+}
+```
+
+Simply just simplify by using 1 `asynchronous` calls.
+
 ### Use `lodash` for object manipulations
 
 [`lodash`](https://lodash.com/) is a utility library that can be used for
